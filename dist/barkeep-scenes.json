@@ -1,0 +1,20 @@
+{
+  "comment": "Optional Touch Bar page for autolight (merged into ~/.config/barkeep/scenes.json by tools/install-bar-scenes.py). A key-only scene (no window to match): reach it with a {\"scene\": \"Auto-brightness\"} key from any scene or screen, e.g. added in the Scenes editor. {BIN} is replaced by the real bin directory. Every key runs `autolightctl`, so everything here also works from a terminal.",
+  "scenes": [
+    {
+      "name": "Auto-brightness",
+      "match": [],
+      "colors": ["#3d2a06", "#a8741a", "#3d2a06"],
+      "keys": [
+        {"icon": "esc", "w": 0.8, "combo": "esc"},
+        {"icon": "mdi:brightness-auto", "w": 1.4, "cmd": "{BIN}/autolightctl toggle", "color": "#6b4a0c", "icon_color": "#ffd98a"},
+        {"icon": "mdi:autorenew", "w": 1.1, "cmd": "{BIN}/autolightctl resume", "icon_color": "#ffd98a"},
+        {"icon": "mdi:weather-night", "w": 1.1, "cmd": "{BIN}/autolightctl dimmer"},
+        {"icon": "mdi:white-balance-sunny", "w": 1.1, "cmd": "{BIN}/autolightctl brighter"},
+        {"icon": "mdi:restore", "w": 1.1, "cmd": "{BIN}/autolightctl bias-reset"},
+        {"icon": "bri-", "w": 1.0, "combo": "brightnessdown"},
+        {"icon": "bri+", "w": 1.0, "combo": "brightnessup"}
+      ]
+    }
+  ]
+}

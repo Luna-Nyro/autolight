@@ -1,0 +1,33 @@
+# autolight configuration. Everything here is commented out: the built-in defaults apply.
+# Uncomment and edit what you want to change, then:  autolightctl reload   (or systemctl --user restart autolight)
+
+# [sensor]
+# name = "als"             # iio device name of the ambient light sensor
+# sample_period = 1.0      # seconds between light readings
+# tau_up = 4.0             # seconds to follow a brighter room (smoothing)
+# tau_down = 10.0          # seconds to follow a darker room (slower on purpose: a shadow must not dim you)
+
+# [screen]
+# enabled = true
+# min_percent = 5          # never darker than this
+# max_percent = 100
+# ramp_rate = 14           # % of the range per second while following the light
+# band_percent = 7         # ignore target moves smaller than this (hysteresis)
+# lux -> brightness %, interpolated on a log scale. Edit to taste (this machine: ~15 lux at night, ~600 lux lit room)
+# curve = [[0, 8], [5, 12], [20, 20], [60, 32], [150, 46], [400, 66], [1000, 88], [3000, 100]]
+
+# [keyboard]
+# enabled = true
+# on_below_lux = 25        # backlight on below this ...
+# off_above_lux = 60       # ... off above this
+# curve = [[0, 60], [10, 45], [25, 30], [60, 18]]   # lux -> backlight %, while it is on
+
+# [manual]
+# resume_after = 900       # seconds auto stays paused after you change brightness yourself; 0 = until toggled
+# bias_step = 5            # "brighter"/"dimmer" nudge, percentage points (whole curve moves)
+
+# [idle]
+# mode = "auto"            # auto: leave dimming to Cinnamon when its idle-dim is on; on: always do it here; off: never
+# dim_after = 60           # seconds without input before the panel dims
+# dim_percent = 25         # ... to at most this percent
+# kbd_off_after = 30       # keyboard backlight off after this many idle seconds; 0 = never

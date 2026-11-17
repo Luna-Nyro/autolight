@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+build/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Logs and local diagnostics
+*.log
+*.tmp
+hid-dump*.txt
+
+# Editors / OS
+.vscode/
+.idea/
+*.swp
+*~
+.DS_Store
+
+# Local config copies
+/config.toml
+
+# Not for the public repo
+PREP-REPORT.md
+
+# Legal-review bundle (contains private data; never commit)
+review.tgz

@@ -1,0 +1,20 @@
+[Unit]
+Description=autolight - ambient-light brightness and keyboard backlight
+Documentation=https://github.com/Luna-Nyro/autolight
+After=graphical-session.target
+PartOf=graphical-session.target
+
+[Service]
+Type=simple
+ExecStart=%h/.local/lib/autolight/bin/autolightd
+Restart=on-failure
+RestartSec=5
+# no usable backlight / no python3-gi: configuration problem, do not restart-loop
+RestartPreventExitStatus=78
+Nice=10
+NoNewPrivileges=yes
+RestrictAddressFamilies=AF_UNIX
+MemoryMax=96M
+
+[Install]
+WantedBy=default.target
